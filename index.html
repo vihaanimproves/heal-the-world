@@ -76,11 +76,32 @@
   <div class="container">
     <div class="hero__grid">
 
-      <!-- Left: text -->
+      <!-- Top: video player — centre stage -->
+      <div class="hero__video-wrap fade-up" aria-label="Introduction video">
+        <div class="hero__video-frame">
+          <video
+            id="hero-video"
+            controls
+            preload="none"
+            playsinline
+            poster="thumbnails/thumb1.png"
+            aria-label="Introduction to Heal The World and the DOS Model"
+          >
+            <source src="https://media.healtheworld.in/StoneAgeOS.mp4" type="video/mp4" id="hero-video-src" />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <p class="hero__video-caption">
+          Watch: Introduction to the DOS Model &mdash; Dr. Parag Jasani
+        </p>
+      </div>
+
+      <!-- Bottom: text -->
       <div class="hero__text">
         <div class="hero__eyebrow fade-up">
           <span class="hero__eyebrow-line"></span>
           Dr. Parag Jasani — Researcher &amp; Author
+          <span class="hero__eyebrow-line"></span>
         </div>
 
         <h1 id="hero-h1" class="hero__h1 fade-up">
@@ -109,35 +130,6 @@
           </span>
           Discover how it works
         </a>
-      </div>
-
-      <!-- Right: video player -->
-      <div class="hero__video-wrap fade-up" aria-label="Introduction video">
-
-        <!-- ─────────────────────────────────────────────────
-             PLACEHOLDER VIDEO PLAYER
-             When you have the R2 file ID, replace the src
-             attribute below with the full URL, e.g.:
-             src="https://YOUR_R2_PUBLIC_URL/YOUR_VIDEO_FILE.mp4"
-        ──────────────────────────────────────────────────── -->
-        <div class="hero__video-frame">
-          <video
-            id="hero-video"
-            controls
-            preload="none"
-            playsinline
-            poster="thumbnails/thumb1.png"
-            aria-label="Introduction to Heal The World and the DOS Model"
-          >
-            <source src="https://media.healtheworld.in/StoneAgeOS.mp4" type="video/mp4" id="hero-video-src" />
-            Your browser does not support HTML5 video.
-          </video>
-        </div>
-
-        <p class="hero__video-caption">
-          Watch: Introduction to the DOS Model
-        </p>
-
       </div>
 
     </div>
