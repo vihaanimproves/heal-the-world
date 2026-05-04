@@ -60,6 +60,10 @@
       Heal The World
     </a>
     <ul class="nav__links" role="list">
+      <li class="nav__visitors" aria-label="Visitor count">
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="opacity:0.7"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zm4.5 7a4.5 4.5 0 10-9 0h9z"/></svg>
+        <span id="visitor-count">—</span>
+      </li>
       <li><a href="#about"    class="nav__link">About</a></li>
       <li><a href="#model"    class="nav__link">The Model</a></li>
       <li><a href="#research" class="nav__link">Research</a></li>
@@ -361,5 +365,14 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+  fetch('https://htw-visitor-counter.vihaanimproves.workers.dev/')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var el = document.getElementById('visitor-count');
+      if (el) el.textContent = data.count.toLocaleString();
+    })
+    .catch(function() {});
+</script>
 </body>
 </html>
