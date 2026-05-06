@@ -65,7 +65,7 @@ ul { list-style: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 900;
-  height: 80px;
+  height: 66px;
   background: var(--green);
   border-bottom: 1px solid rgba(0,0,0,0.15);
   padding: 0 48px;
@@ -170,7 +170,7 @@ ul { list-style: none; }
 /* ── HERO ─────────────────────────────────────────────── */
 .hero {
   background: var(--bg);
-  padding: 108px 0 80px;
+  padding: 94px 0 80px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -377,7 +377,7 @@ ul { list-style: none; }
   align-items: start;
 }
 
-.about__left { position: sticky; top: 80px; }
+.about__left { position: sticky; top: 66px; }
 
 .about__panel {
   background: var(--bg-dark);
@@ -698,7 +698,7 @@ ul { list-style: none; }
 .media-hero__sub { font-size: 0.92rem; font-weight: 300; color: rgba(255,255,255,0.42); max-width: 540px; line-height: 1.85; }
 .media-hero__filters { display: flex; gap: 8px; margin-top: 28px; flex-wrap: wrap; }
 
-.player-bar { position: sticky; top: 80px; z-index: 800; height: 62px; padding: 0 48px; background: var(--bg-dark-2); border-bottom: 2px solid var(--green); display: flex; align-items: center; gap: 16px; transform: translateY(-100%); opacity: 0; transition: transform 0.28s ease, opacity 0.28s ease; pointer-events: none; }
+.player-bar { position: sticky; top: 66px; z-index: 800; height: 62px; padding: 0 48px; background: var(--bg-dark-2); border-bottom: 2px solid var(--green); display: flex; align-items: center; gap: 16px; transform: translateY(-100%); opacity: 0; transition: transform 0.28s ease, opacity 0.28s ease; pointer-events: none; }
 .player-bar.visible { transform: translateY(0); opacity: 1; pointer-events: all; }
 .player-bar__icon { width: 34px; height: 34px; background: var(--green); border-radius: var(--r); display: flex; align-items: center; justify-content: center; color: var(--white); flex-shrink: 0; }
 .player-bar__info { flex: 0 0 180px; min-width: 0; }
@@ -791,7 +791,7 @@ ul { list-style: none; }
 
 /* ── Nav logo image ─────────────────────────────────────── */
 .nav__logo-img {
-  width: 74px;   /* 1600/1128 × 52px ≈ 73.8px */
+  width: 111px;  /* 74px × 1.5 */
   height: 52px;
 
   display: block;
