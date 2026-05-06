@@ -32,15 +32,7 @@ const VIDEO_FILES = [
 ];
 
 // ── NAV SCROLL ─────────────────────────────────────────────
-function initNav() {
-  const nav = document.querySelector('.nav');
-  if (!nav) return;
-  window.addEventListener('scroll', function() {
-    nav.style.background = window.scrollY > 40
-      ? 'rgba(11,31,58,1)'
-      : 'rgba(11,31,58,0.97)';
-  }, { passive: true });
-}
+function initNav() {} // colour override removed
 
 // ── SCROLL REVEAL ──────────────────────────────────────────
 function initReveal() {

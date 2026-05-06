@@ -65,7 +65,7 @@ ul { list-style: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 900;
-  height: 60px;
+  height: 80px;
   background: var(--green);
   border-bottom: 1px solid rgba(0,0,0,0.15);
   padding: 0 48px;
@@ -170,7 +170,7 @@ ul { list-style: none; }
 /* ── HERO ─────────────────────────────────────────────── */
 .hero {
   background: var(--bg);
-  padding: 88px 0 80px;
+  padding: 108px 0 80px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -307,7 +307,9 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   display: block;
+  flex-shrink: 0;
   object-fit: contain;
+  object-position: left center;
   accent-color: var(--green);
 }
 
@@ -696,7 +698,7 @@ ul { list-style: none; }
 .media-hero__sub { font-size: 0.92rem; font-weight: 300; color: rgba(255,255,255,0.42); max-width: 540px; line-height: 1.85; }
 .media-hero__filters { display: flex; gap: 8px; margin-top: 28px; flex-wrap: wrap; }
 
-.player-bar { position: sticky; top: 60px; z-index: 800; height: 62px; padding: 0 48px; background: var(--bg-dark-2); border-bottom: 2px solid var(--green); display: flex; align-items: center; gap: 16px; transform: translateY(-100%); opacity: 0; transition: transform 0.28s ease, opacity 0.28s ease; pointer-events: none; }
+.player-bar { position: sticky; top: 80px; z-index: 800; height: 62px; padding: 0 48px; background: var(--bg-dark-2); border-bottom: 2px solid var(--green); display: flex; align-items: center; gap: 16px; transform: translateY(-100%); opacity: 0; transition: transform 0.28s ease, opacity 0.28s ease; pointer-events: none; }
 .player-bar.visible { transform: translateY(0); opacity: 1; pointer-events: all; }
 .player-bar__icon { width: 34px; height: 34px; background: var(--green); border-radius: var(--r); display: flex; align-items: center; justify-content: center; color: var(--white); flex-shrink: 0; }
 .player-bar__info { flex: 0 0 180px; min-width: 0; }
@@ -785,4 +787,15 @@ ul { list-style: none; }
   .player-bar__info { flex: 0 0 100px; }
   .nav__links { gap: 18px; }
   .footer__bottom { flex-direction: column; }
+}
+
+/* ── Nav logo image ─────────────────────────────────────── */
+.nav__logo-img {
+  width: 74px;   /* 1600/1128 × 52px ≈ 73.8px */
+  height: 52px;
+
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  object-position: left center;
 }
