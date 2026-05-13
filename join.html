@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the Initiative — Heal The World | Dr. Parag Jasani</title>
+  <meta name="description" content="Join the Heal the World initiative. Be part of a global movement to understand the human mind and transform the world through science." />
+  <meta name="author" content="Dr. Parag Jasani" />
+  <link rel="canonical" href="https://healtheworld.in/join.html" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── JOIN PAGE SPECIFIC ─────────────────────────────── */
+
+    .join-hero {
+      background: var(--green);
+      padding: 110px 0 64px;
+      text-align: center;
+    }
+
+    .join-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-b);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 20px;
+    }
+
+    .join-hero__eyebrow span {
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: var(--green-bright);
+    }
+
+    .join-hero__h1 {
+      font-family: var(--font-d);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 0.97;
+      color: var(--white);
+      margin-bottom: 20px;
+      letter-spacing: 0.01em;
+    }
+
+    .join-hero__h1 em {
+      font-style: normal;
+      color: var(--green-bright);
+    }
+
+    .join-hero__sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+
+    /* Step indicator */
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 0;
+    }
+
+    .step-indicator__item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-b);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .step-indicator__num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      transition: all var(--t);
+    }
+
+    .step-indicator__item.active {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .step-indicator__item.active .step-indicator__num {
+      background: var(--green-bright);
+      border-color: var(--green-bright);
+      color: var(--white);
+    }
+
+    .step-indicator__item.done .step-indicator__num {
+      background: rgba(56,160,102,0.3);
+      border-color: var(--green-bright);
+      color: var(--green-bright);
+    }
+
+    .step-indicator__sep {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin: 0 12px;
+    }
+
+    /* ── FORM SECTION ───────────────────────────────────── */
+    .join-main {
+      padding: 64px 0 96px;
+    }
+
+    .join-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 48px rgba(17,17,9,0.08);
+      overflow: hidden;
+    }
+
+    .join-card__step {
+      display: none;
+      padding: 48px 52px;
+    }
+
+    .join-card__step.active {
+      display: block;
+    }
+
+    .join-card__step-head {
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .join-card__step-label {
+      font-family: var(--font-b);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 8px;
+    }
+
+    .join-card__step-title {
+      font-family: var(--font-d);
+      font-size: 2rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .join-card__step-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── FORM FIELDS ────────────────────────────────────── */
+    .f-group {
+      margin-bottom: 24px;
+    }
+
+    .f-group--half {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .f-label {
+      display: block;
+      font-family: var(--font-b);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-2);
+      margin-bottom: 7px;
+      letter-spacing: 0.01em;
+    }
+
+    .f-label span {
+      font-weight: 400;
+      color: var(--text-dim);
+      font-size: 0.72rem;
+    }
+
+    .f-input,
+    .f-select,
+    .f-textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 11px 14px;
+      font-family: var(--font-b);
+      font-size: 0.88rem;
+      color: var(--text);
+      transition: border-color var(--t), box-shadow var(--t);
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .f-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3E%3Cpath fill='%236B6B61' d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .f-textarea {
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.65;
+    }
+
+    .f-input:focus,
+    .f-select:focus,
+    .f-textarea:focus {
+      border-color: var(--green-bright);
+      box-shadow: 0 0 0 3px rgba(56,160,102,0.1);
+    }
+
+    .f-input::placeholder,
+    .f-textarea::placeholder { color: var(--text-dim); }
+
+    /* Radio + Checkbox groups */
+    .f-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .f-options--wrap {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .f-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .f-option input[type="radio"],
+    .f-option input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--green);
+      cursor: pointer;
+    }
+
+    .f-option__label {
+      font-size: 0.86rem;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+
+    .f-option__label small {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 1px;
+    }
+
+    /* Chip-style checkboxes for skills */
+    .f-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .f-chip {
+      position: relative;
+    }
+
+    .f-chip input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .f-chip__label {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--t);
+      user-select: none;
+    }
+
+    .f-chip input:checked + .f-chip__label {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--white);
+    }
+
+    .f-chip__label:hover {
+      border-color: var(--green-bright);
+      color: var(--green);
+    }
+
+    .f-chip input:checked + .f-chip__label:hover {
+      background: var(--green-mid);
+      border-color: var(--green-mid);
+      color: var(--white);
+    }
+
+    /* Divider */
+    .f-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 32px 0;
+    }
+
+    .f-section-label {
+      font-family: var(--font-b);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    /* Commitment box */
+    .f-commitment {
+      background: var(--green-tint);
+      border: 1px solid var(--border-green);
+      border-radius: var(--rl);
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* ── NAVIGATION BUTTONS ─────────────────────────────── */
+    .join-card__foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .join-card__foot--right {
+      justify-content: flex-end;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-b);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color var(--t);
+    }
+
+    .btn-back:hover { color: var(--text); }
+
+    .btn-next,
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-b);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--green);
+      border: none;
+      border-radius: var(--r);
+      padding: 13px 28px;
+      cursor: pointer;
+      transition: all var(--t);
+      letter-spacing: 0.01em;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--green-mid);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ── SUCCESS STATE ──────────────────────────────────── */
+    .join-success {
+      display: none;
+      text-align: center;
+      padding: 72px 52px;
+    }
+
+    .join-success.active {
+      display: block;
+    }
+
+    .join-success__icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--green-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: var(--green);
+    }
+
+    .join-success__title {
+      font-family: var(--font-d);
+      font-size: 2.4rem;
+      color: var(--text);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .join-success__body {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 400px;
+      margin: 0 auto 32px;
+      line-height: 1.75;
+    }
+
+    /* ── ERROR MESSAGE ──────────────────────────────────── */
+    .f-error {
+      display: none;
+      font-size: 0.78rem;
+      color: #b91c1c;
+      margin-top: 5px;
+    }
+
+    .f-error.visible { display: block; }
+
+    .f-input.invalid,
+    .f-textarea.invalid,
+    .f-select.invalid {
+      border-color: #b91c1c;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 760px) {
+      .join-card__step { padding: 32px 24px; }
+      .join-success     { padding: 48px 24px; }
+      .f-group--half    { grid-template-columns: 1fr; }
+      .step-indicator__sep { width: 20px; margin: 0 6px; }
+    }
+
+    @media (max-width: 500px) {
+      .step-indicator__item span:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="images/logo.png" alt="Heal The World" class="nav__logo-img" />
+    </a>
+    <ul class="nav__links" role="list">
+      <li class="nav__visitors" aria-label="Visitor count">
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="opacity:0.7"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zm4.5 7a4.5 4.5 0 10-9 0h9z"/></svg>
+        <span id="visitor-count">—</span>
+      </li>
+      <li><a href="index.html#about"    class="nav__link">About</a></li>
+      <li><a href="index.html#model"    class="nav__link">The Model</a></li>
+      <li><a href="index.html#research" class="nav__link">Research</a></li>
+      <li><a href="https://www.yourdailylife.blog/" target="_blank" rel="noopener" class="nav__link">Blog</a></li>
+      <li><a href="join.html" class="nav__link active">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<header class="join-hero">
+  <div class="container">
+    <div class="join-hero__eyebrow">
+      <span></span>
+      The Initiative
+      <span></span>
+    </div>
+    <h1 class="join-hero__h1">
+      Be Part of<br/><em>Something Larger</em>
+    </h1>
+    <p class="join-hero__sub">
+      Join a global movement to understand the human mind and transform the world.
+      Two quick steps. No commitment until you're ready.
+    </p>
+
+    <div class="step-indicator" id="step-indicator" aria-label="Form progress">
+      <div class="step-indicator__item active" id="ind-1">
+        <div class="step-indicator__num">1</div>
+        <span>Who You Are</span>
+      </div>
+      <div class="step-indicator__sep" aria-hidden="true"></div>
+      <div class="step-indicator__item" id="ind-2">
+        <div class="step-indicator__num">2</div>
+        <span>Your Alignment</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════
+     FORM
+════════════════════════════════════════ -->
+<main class="join-main">
+  <div class="container">
+    <div class="join-card">
+
+      <!-- ── STEP 1 ─────────────────────────────────────── -->
+      <div class="join-card__step active" id="step-1" aria-label="Step 1 of 2">
+
+        <div class="join-card__step-head">
+          <div class="join-card__step-label">Step 1 of 2</div>
+          <div class="join-card__step-title">The Basics</div>
+          <p class="join-card__step-sub">Just a few quick details to get started. Only your name and email are required.</p>
+        </div>
+
+        <!-- Name -->
+        <div class="f-group f-group--half">
+          <div>
+            <label class="f-label" for="f-name">Full Name</label>
+            <input class="f-input" type="text" id="f-name" name="name" placeholder="Dr. Jane Smith" autocomplete="name" required />
+            <span class="f-error" id="err-name">Please enter your name.</span>
+          </div>
+          <div>
+            <label class="f-label" for="f-email">Email Address</label>
+            <input class="f-input" type="email" id="f-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+            <span class="f-error" id="err-email">Please enter a valid email.</span>
+          </div>
+        </div>
+
+        <!-- Phone + Location -->
+        <div class="f-group f-group--half">
+          <div>
+            <label class="f-label" for="f-phone">Phone <span>(optional)</span></label>
+            <input class="f-input" type="tel" id="f-phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+          </div>
+          <div>
+            <label class="f-label" for="f-location">City / Country</label>
+            <input class="f-input" type="text" id="f-location" name="location" placeholder="Mumbai, India" autocomplete="address-level2" required />
+            <span class="f-error" id="err-location">Please enter your city or country.</span>
+          </div>
+        </div>
+
+        <!-- Age -->
+        <div class="f-group">
+          <label class="f-label" for="f-age">Age <span>(optional)</span></label>
+          <input class="f-input" type="number" id="f-age" name="age" placeholder="e.g. 34" min="13" max="100" style="max-width:160px;" />
+        </div>
+
+        <hr class="f-divider" />
+
+        <!-- Role -->
+        <div class="f-group">
+          <div class="f-section-label">How would you like to join?</div>
+          <div class="f-options" id="f-role" role="radiogroup" aria-label="Role selection">
+            <label class="f-option">
+              <input type="radio" name="role" value="Learner" required />
+              <span class="f-option__label">Learner
+                <small>Understand the DOS Model and its implications</small>
+              </span>
+            </label>
+            <label class="f-option">
+              <input type="radio" name="role" value="Volunteer" />
+              <span class="f-option__label">Volunteer
+                <small>Give time and energy to help the initiative grow</small>
+              </span>
+            </label>
+            <label class="f-option">
+              <input type="radio" name="role" value="Core Team Member" />
+              <span class="f-option__label">Core Team Member
+                <small>Take on a sustained, leadership-level responsibility</small>
+              </span>
+            </label>
+            <label class="f-option">
+              <input type="radio" name="role" value="Content Creator" />
+              <span class="f-option__label">Content Creator
+                <small>Write, film, or design content based on the model</small>
+              </span>
+            </label>
+            <label class="f-option">
+              <input type="radio" name="role" value="Research / Academic Collaborator" />
+              <span class="f-option__label">Research / Academic Collaborator
+                <small>Engage with the model in a scholarly or scientific capacity</small>
+              </span>
+            </label>
+            <label class="f-option">
+              <input type="radio" name="role" value="Therapist / Psychology Professional" />
+              <span class="f-option__label">Therapist / Psychology Professional
+                <small>Apply the framework in a therapeutic or clinical context</small>
+              </span>
+            </label>
+            <label class="f-option">
+              <input type="radio" name="role" value="Other" />
+              <span class="f-option__label">Other — I'll describe below</span>
+            </label>
+          </div>
+          <span class="f-error" id="err-role">Please select a role.</span>
+        </div>
+
+        <div class="f-group" id="role-other-wrap" style="display:none;">
+          <label class="f-label" for="f-role-other">Describe your role</label>
+          <input class="f-input" type="text" id="f-role-other" name="role_other" placeholder="Tell us how you'd like to contribute" />
+        </div>
+
+        <div class="join-card__foot join-card__foot--right">
+          <button class="btn-next" id="btn-next-1" type="button">
+            Continue
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L10.293 8 4.646 2.354a.5.5 0 010-.708z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ── STEP 2 ─────────────────────────────────────── -->
+      <form class="join-card__step" id="step-2" aria-label="Step 2 of 2"
+            action="https://api.web3forms.com/submit" method="POST">
+
+        <!-- Web3Forms hidden fields -->
+        <input type="hidden" name="access_key" value="02d8d8e3-b93a-4e4f-bff0-79d821c9f9b1" />
+        <input type="hidden" name="subject" value="New Heal The World Membership Application" />
+        <input type="hidden" name="from_name" value="Heal The World — Join Form" />
+        <input type="hidden" name="redirect" value="false" />
+        <!-- Step 1 values passed through hidden fields -->
+        <input type="hidden" id="h-name"     name="Full Name" />
+        <input type="hidden" id="h-email"    name="Email" />
+        <input type="hidden" id="h-phone"    name="Phone" />
+        <input type="hidden" id="h-location" name="Location" />
+        <input type="hidden" id="h-age"      name="Age" />
+        <input type="hidden" id="h-role"     name="Role" />
+
+        <div class="join-card__step-head">
+          <div class="join-card__step-label">Step 2 of 2</div>
+          <div class="join-card__step-title">Your Alignment</div>
+          <p class="join-card__step-sub">Help us understand how you think. There are no right answers — only honest ones.</p>
+        </div>
+
+        <!-- How they heard -->
+        <div class="f-group">
+          <div class="f-section-label">Awareness & Alignment</div>
+          <label class="f-label" for="f-source">How did you hear about Heal the World?</label>
+          <select class="f-select" id="f-source" name="How did you hear about us">
+            <option value="" disabled selected>Select one…</option>
+            <option>Social media</option>
+            <option>A friend or colleague</option>
+            <option>YouTube / video</option>
+            <option>The YourDailyLife blog</option>
+            <option>Search engine</option>
+            <option>A talk or event</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- What attracted them -->
+        <div class="f-group">
+          <label class="f-label" for="f-attracted">What attracted you to this initiative? <span>(a sentence or two)</span></label>
+          <textarea class="f-textarea" id="f-attracted" name="What attracted you" placeholder="What drew your attention and why does it matter to you?"></textarea>
+        </div>
+
+        <!-- Resonance -->
+        <div class="f-group">
+          <label class="f-label">Do you resonate with the idea that human behavior is driven by underlying mental mechanisms shaped by evolution?</label>
+          <div class="f-options f-options--wrap" role="radiogroup">
+            <label class="f-option">
+              <input type="radio" name="resonance_with_model" value="Yes" />
+              <span class="f-option__label">Yes</span>
+            </label>
+            <label class="f-option">
+              <input type="radio" name="resonance_with_model" value="No" />
+              <span class="f-option__label">No</span>
+            </label>
+            <label class="f-option">
+              <input type="radio" name="resonance_with_model" value="Not sure yet" />
+              <span class="f-option__label">Not sure yet</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Meaning of healing -->
+        <div class="f-group">
+          <label class="f-label" for="f-meaning">In one line: what does "healing the world" mean to you?</label>
+          <input class="f-input" type="text" id="f-meaning" name="What healing the world means to you" placeholder="Your one-line answer…" />
+        </div>
+
+        <hr class="f-divider" />
+
+        <!-- Skills -->
+        <div class="f-group">
+          <div class="f-section-label">Skills & Background</div>
+          <label class="f-label">What are your key skills? <span>(select all that apply)</span></label>
+          <div class="f-chips">
+            <div class="f-chip"><input type="checkbox" name="skills" value="Writing" id="sk-writing" /><label class="f-chip__label" for="sk-writing">Writing</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Teaching" id="sk-teaching" /><label class="f-chip__label" for="sk-teaching">Teaching</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Psychology" id="sk-psych" /><label class="f-chip__label" for="sk-psych">Psychology</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Marketing" id="sk-mkt" /><label class="f-chip__label" for="sk-mkt">Marketing</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Video editing" id="sk-video" /><label class="f-chip__label" for="sk-video">Video editing</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Social media" id="sk-social" /><label class="f-chip__label" for="sk-social">Social media</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Tech / web development" id="sk-tech" /><label class="f-chip__label" for="sk-tech">Tech / web dev</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Community building" id="sk-community" /><label class="f-chip__label" for="sk-community">Community building</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Research / Academia" id="sk-research" /><label class="f-chip__label" for="sk-research">Research / Academia</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Translation / Languages" id="sk-lang" /><label class="f-chip__label" for="sk-lang">Translation / Languages</label></div>
+            <div class="f-chip"><input type="checkbox" name="skills" value="Other" id="sk-other" /><label class="f-chip__label" for="sk-other">Other</label></div>
+          </div>
+        </div>
+
+        <div class="f-group f-group--half">
+          <div>
+            <label class="f-label" for="f-occupation">Current occupation / field</label>
+            <input class="f-input" type="text" id="f-occupation" name="Occupation" placeholder="e.g. Software Engineer, Teacher…" />
+          </div>
+          <div>
+            <label class="f-label" for="f-prior">Worked on a similar initiative? <span>(optional)</span></label>
+            <input class="f-input" type="text" id="f-prior" name="Prior similar work" placeholder="Briefly describe…" />
+          </div>
+        </div>
+
+        <hr class="f-divider" />
+
+        <!-- Why -->
+        <div class="f-group">
+          <div class="f-section-label">Your Intent</div>
+          <label class="f-label" for="f-why">Why do you want to be part of this project?</label>
+          <textarea class="f-textarea" id="f-why" name="Why you want to join" placeholder="Be as honest and direct as you'd like…"></textarea>
+        </div>
+
+        <hr class="f-divider" />
+
+        <!-- Availability -->
+        <div class="f-group">
+          <div class="f-section-label">Availability</div>
+          <label class="f-label">How much time can you contribute per week?</label>
+          <div class="f-options f-options--wrap" role="radiogroup">
+            <label class="f-option"><input type="radio" name="time_per_week" value="Less than 2 hours" /><span class="f-option__label">Less than 2 hrs</span></label>
+            <label class="f-option"><input type="radio" name="time_per_week" value="2–5 hours" /><span class="f-option__label">2–5 hrs</span></label>
+            <label class="f-option"><input type="radio" name="time_per_week" value="5–10 hours" /><span class="f-option__label">5–10 hrs</span></label>
+            <label class="f-option"><input type="radio" name="time_per_week" value="10+ hours" /><span class="f-option__label">10+ hrs</span></label>
+          </div>
+        </div>
+
+        <div class="f-group">
+          <label class="f-label">Preferred mode of contribution</label>
+          <div class="f-options f-options--wrap" role="radiogroup">
+            <label class="f-option"><input type="radio" name="contribution_mode" value="Remote" /><span class="f-option__label">Remote</span></label>
+            <label class="f-option"><input type="radio" name="contribution_mode" value="In-person (Mumbai)" /><span class="f-option__label">In-person (Mumbai)</span></label>
+            <label class="f-option"><input type="radio" name="contribution_mode" value="Both" /><span class="f-option__label">Both</span></label>
+          </div>
+        </div>
+
+        <hr class="f-divider" />
+
+        <!-- Depth check -->
+        <div class="f-group">
+          <div class="f-section-label">Depth Check</div>
+          <label class="f-label" for="f-depth">Describe a situation where you became aware of your own emotional reaction and handled it consciously. <span>(optional but powerful)</span></label>
+          <textarea class="f-textarea" id="f-depth" name="Self-awareness example" placeholder="Take your time. This tells us more than any resume." style="min-height:120px;"></textarea>
+        </div>
+
+        <hr class="f-divider" />
+
+        <!-- Open to -->
+        <div class="f-group">
+          <div class="f-section-label">Open to (Advanced)</div>
+          <label class="f-label">Are you open to any of the following? <span>(optional — select all that apply)</span></label>
+          <div class="f-options">
+            <label class="f-option">
+              <input type="checkbox" name="open_to" value="Leading local communities" />
+              <span class="f-option__label">Leading local communities</span>
+            </label>
+            <label class="f-option">
+              <input type="checkbox" name="open_to" value="Creating content based on the model" />
+              <span class="f-option__label">Creating content based on the model</span>
+            </label>
+            <label class="f-option">
+              <input type="checkbox" name="open_to" value="Helping translate the model into other languages" />
+              <span class="f-option__label">Helping translate the model into other languages</span>
+            </label>
+          </div>
+        </div>
+
+        <hr class="f-divider" />
+
+        <!-- Commitment + updates -->
+        <div class="f-group">
+          <div class="f-section-label">Commitment</div>
+          <div class="f-commitment">
+            <label class="f-option">
+              <input type="checkbox" name="commitment" value="Learn deeply, contribute meaningfully, and respect the scientific and rational foundation of the project" id="f-commit" required />
+              <span class="f-option__label">I am joining with the intention to learn deeply, contribute meaningfully, and respect the scientific and rational foundation of this project.</span>
+            </label>
+          </div>
+          <span class="f-error" id="err-commit">Please check this box to proceed.</span>
+        </div>
+
+        <div class="f-group">
+          <label class="f-option">
+            <input type="checkbox" name="wants_updates" value="Yes" />
+            <span class="f-option__label">I'd like to receive updates, training sessions, and opportunities to contribute.</span>
+          </label>
+        </div>
+
+        <div class="join-card__foot">
+          <button class="btn-back" id="btn-back-2" type="button">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.354 1.646a.5.5 0 010 .708L5.707 8l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z"/></svg>
+            Back
+          </button>
+          <button class="btn-submit" id="btn-submit" type="submit">
+            Submit Application
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A.5.5 0 012.5 2h11a.5.5 0 010 1h-11A.5.5 0 012 2.5zm0 5A.5.5 0 012.5 7h11a.5.5 0 010 1h-11A.5.5 0 012 7zm0 5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z"/></svg>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- ── SUCCESS ────────────────────────────────────── -->
+      <div class="join-success" id="join-success" aria-live="polite">
+        <div class="join-success__icon">
+          <svg width="28" height="28" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z"/>
+          </svg>
+        </div>
+        <div class="join-success__title">Application Received</div>
+        <p class="join-success__body">
+          Thank you for taking the time to apply. Dr. Parag Jasani's team will review
+          your submission and be in touch. Welcome to the beginning of something meaningful.
+        </p>
+        <a href="index.html" class="btn btn--green">Return Home</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <span class="footer__brand-line"></span>
+        <div class="footer__brand">Heal The World</div>
+        <p class="footer__tagline">
+          A global initiative to achieve peace through understanding the mechanisms
+          of the human mind. Built on 15+ years of research by Dr. Parag Jasani.
+        </p>
+      </div>
+      <div>
+        <div class="footer__col-label">Navigation</div>
+        <ul class="footer__links" role="list">
+          <li><a href="index.html#about"    class="footer__link">About</a></li>
+          <li><a href="index.html#model"    class="footer__link">The Model</a></li>
+          <li><a href="index.html#research" class="footer__link">Research</a></li>
+          <li><a href="join.html"           class="footer__link">Join</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-label">External</div>
+        <ul class="footer__links" role="list">
+          <li><a href="https://www.yourdailylife.blog/" target="_blank" rel="noopener" class="footer__link">Your Daily Life Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2024 Dr. Parag Jasani &bull; healtheworld.in</p>
+      <p class="footer__copy">All content is the intellectual property of Dr. Parag Jasani.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  fetch('https://htw-visitor-counter.vihaanimproves.workers.dev/', { credentials: 'include' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var el = document.getElementById('visitor-count');
+      if (el) el.textContent = data.count.toLocaleString();
+    })
+    .catch(function() {});
+</script>
+<script>
+(function() {
+
+  // ── Show/hide "Other role" input ───────────────────────
+  document.querySelectorAll('input[name="role"]').forEach(function(r) {
+    r.addEventListener('change', function() {
+      document.getElementById('role-other-wrap').style.display =
+        this.value === 'Other' ? 'block' : 'none';
+    });
+  });
+
+  // ── Step 1 validation + next ───────────────────────────
+  document.getElementById('btn-next-1').addEventListener('click', function() {
+    var ok = true;
+
+    function validate(id, errId, check) {
+      var el  = document.getElementById(id);
+      var err = document.getElementById(errId);
+      if (check(el)) {
+        el.classList.remove('invalid');
+        err.classList.remove('visible');
+      } else {
+        el.classList.add('invalid');
+        err.classList.add('visible');
+        ok = false;
+      }
+    }
+
+    validate('f-name',     'err-name',     function(el) { return el.value.trim().length > 1; });
+    validate('f-email',    'err-email',    function(el) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()); });
+    validate('f-location', 'err-location', function(el) { return el.value.trim().length > 1; });
+
+    var roleChosen = document.querySelector('input[name="role"]:checked');
+    var roleErr    = document.getElementById('err-role');
+    if (!roleChosen) {
+      roleErr.classList.add('visible');
+      ok = false;
+    } else {
+      roleErr.classList.remove('visible');
+    }
+
+    if (!ok) return;
+
+    // Pass step-1 values into hidden fields for Web3Forms
+    document.getElementById('h-name').value     = document.getElementById('f-name').value.trim();
+    document.getElementById('h-email').value    = document.getElementById('f-email').value.trim();
+    document.getElementById('h-phone').value    = document.getElementById('f-phone').value.trim();
+    document.getElementById('h-location').value = document.getElementById('f-location').value.trim();
+    document.getElementById('h-age').value      = document.getElementById('f-age').value.trim();
+    document.getElementById('h-role').value     = roleChosen.value +
+      (roleChosen.value === 'Other' ? ' — ' + document.getElementById('f-role-other').value : '');
+
+    // Show step 2
+    document.getElementById('step-1').classList.remove('active');
+    document.getElementById('step-2').classList.add('active');
+    document.getElementById('ind-1').classList.remove('active');
+    document.getElementById('ind-1').classList.add('done');
+    document.getElementById('ind-2').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── Back button ────────────────────────────────────────
+  document.getElementById('btn-back-2').addEventListener('click', function() {
+    document.getElementById('step-2').classList.remove('active');
+    document.getElementById('step-1').classList.add('active');
+    document.getElementById('ind-2').classList.remove('active');
+    document.getElementById('ind-1').classList.remove('done');
+    document.getElementById('ind-1').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── Form submission via Web3Forms ──────────────────────
+  document.getElementById('step-2').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Validate commitment checkbox
+    var commit = document.getElementById('f-commit');
+    var errCommit = document.getElementById('err-commit');
+    if (!commit.checked) {
+      errCommit.classList.add('visible');
+      commit.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    errCommit.classList.remove('visible');
+
+    var btn = document.getElementById('btn-submit');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    var data = new FormData(this);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(res) {
+      if (res.success) {
+        document.getElementById('step-2').classList.remove('active');
+        document.getElementById('join-success').classList.add('active');
+        document.getElementById('step-indicator').style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Submit Application';
+        alert('Something went wrong. Please try again.');
+      }
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Submit Application';
+      alert('Network error. Please check your connection and try again.');
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
